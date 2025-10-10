@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "missionStatement": {
+      "type": "blocks"
+    },
+    "visionStatement": {
+      "type": "blocks"
+    },
+    "teamSection": {
+      "type": "component",
+      "component": "team-section.team-section",
+      "repeatable": true
+    }
+  }
+}

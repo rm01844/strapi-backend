@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "downloads",
+  "info": {
+    "singularName": "download",
+    "pluralName": "downloads",
+    "displayName": "Download"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "enumeration",
+      "enum": [
+        "iOS",
+        "Android",
+        "Windows",
+        "MacOS",
+        "Linux"
+      ]
+    },
+    "app_name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "file_size": {
+      "type": "string"
+    },
+    "download_url": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "string"
+    },
+    "release_notes": {
+      "type": "blocks"
+    },
+    "releaseDate": {
+      "type": "date"
+    },
+    "downloadCount": {
+      "type": "biginteger"
+    }
+  }
+}

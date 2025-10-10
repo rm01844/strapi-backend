@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "brand_centers",
+  "info": {
+    "singularName": "brand-center",
+    "pluralName": "brand-centers",
+    "displayName": "Brand-center"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "brand_name": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "brand_colors": {
+      "type": "component",
+      "component": "brand-colors.brand-colors",
+      "repeatable": true
+    },
+    "mission": {
+      "type": "blocks"
+    },
+    "values": {
+      "type": "blocks"
+    }
+  }
+}

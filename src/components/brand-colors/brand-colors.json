@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_brand_colors_brand_colors",
+  "info": {
+    "displayName": "brand_colors"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "hex_code": {
+      "type": "string"
+    },
+    "usage": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
