@@ -17,8 +17,7 @@ It provides endpoints for products, services, and dynamic content that can be ma
 ##  Tech Stack
 - **Node.js v20**
 - **Strapi v5.25**
-- **SQLite**
-- **Better-sqlite3**
+- **Postgres Database**
 - **Render Cloud** (deployment)
 
 ---
