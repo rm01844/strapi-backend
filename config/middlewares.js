@@ -20,16 +20,8 @@ export default [
       },
     },
   },
-  {
-    name: 'strapi::cors',
-    config: {
-      enabled: true,
-      origin: ['*'], // later you can restrict to ['http://localhost:5500'] or your domain
-      headers: '*',
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-    },
-  },
   'strapi::poweredBy',
+  'strapi::cors',
   'strapi::logger',
   'strapi::query',
   'strapi::body',
