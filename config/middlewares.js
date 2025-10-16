@@ -24,10 +24,9 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
-      origin: ['*'], // or restrict to your frontend if you prefer
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      origin: ['*'], // or your frontend URL only
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       keepHeaderOnError: true,
     },
   },
