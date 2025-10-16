@@ -1,8 +1,8 @@
 export default ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 1337),
+  port: env.int('PORT', 10000),
   url: env('PUBLIC_URL', 'https://mobiletech-backend.onrender.com'),
   app: {
-    keys: env.array('APP_KEYS', ['yourSecretKey1', 'yourSecretKey2']),
+    keys: env.array('APP_KEYS'),
   },
 });
