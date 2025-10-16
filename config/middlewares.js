@@ -21,7 +21,16 @@ export default [
     },
   },
   'strapi::poweredBy',
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      origin: ['*'], // or restrict to your frontend if you prefer
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+      keepHeaderOnError: true,
+    },
+  },
   'strapi::logger',
   'strapi::query',
   'strapi::body',
