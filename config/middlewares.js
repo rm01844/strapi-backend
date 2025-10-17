@@ -20,16 +20,7 @@ export default [
       },
     },
   },
-  'strapi::poweredBy',
-  {
-    name: 'strapi::cors',
-    config: {
-      origin: ['*'], // or your frontend URL only
-      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
-      keepHeaderOnError: true,
-    },
-  },
+  'strapi::cors',
   'strapi::logger',
   'strapi::query',
   'strapi::body',
