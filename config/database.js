@@ -1,29 +1,41 @@
-const path = require('path');
+const { parse } = require('pg-connection-string');
 
 module.exports = ({ env }) => {
-  const client = env('DATABASE_CLIENT', 'postgres');
+  const databaseUrl = env('DATABASE_URL');
 
-  const connections = {
-    postgres: {
+  if (databaseUrl) {
+    const config = parse(databaseUrl);
+    
+    return {
+      connection: {
+        client: 'postgres',
+        connection: {
+          host: config.host,
+          port: config.port,
+          database: config.database,
+          user: config.user,
+          password: config.password,
+          ssl: {
+            rejectUnauthorized: false
+          },
+        },
+        debug: false,
+      },
+    };
+  }
+
+  // Fallback for local development
+  return {
+    connection: {
+      client: 'postgres',
       connection: {
         host: env('DATABASE_HOST', '127.0.0.1'),
         port: env.int('DATABASE_PORT', 5432),
         database: env('DATABASE_NAME', 'strapi'),
         user: env('DATABASE_USERNAME', 'strapi'),
         password: env('DATABASE_PASSWORD', 'strapi'),
-        ssl: env.bool('DATABASE_SSL', false) ? {
-          rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false)
-        } : false,
+        ssl: false,
       },
-      pool: { min: 2, max: 10 }
-    }
-  };
-
-  return {
-    connection: {
-      client,
-      ...connections[client],
-      acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
     },
   };
 };
