@@ -1,6 +1,6 @@
 export default ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 10000),
+  port: env.int('PORT', 1337),
   url: env('STRAPI_ADMIN_BACKEND_URL', 'https://strapi-backend-bchh.onrender.com'),
   proxy: true,
   app: {
