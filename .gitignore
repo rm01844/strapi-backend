@@ -1,1 +1,6 @@
 !data.db
+.cache
+.env
+node_modules
+build
+.strapi
