@@ -25,7 +25,18 @@ export default [
   'strapi::logger',
   'strapi::query',
   'strapi::body',
-  'strapi::session',
+  {
+    name: 'strapi::session',
+    config: {
+      key: 'strapi.sid',
+      rolling: false,
+      renew: false,
+      httpOnly: true,
+      maxAge: 86400000,
+      secure: false,
+      sameSite: 'lax',
+    },
+  },
   'strapi::favicon',
   'strapi::public',
 ];
