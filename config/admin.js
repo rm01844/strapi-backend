@@ -17,7 +17,4 @@ module.exports = ({ env }) => ({
     nps: env.bool('FLAG_NPS', true),
     promoteEE: env.bool('FLAG_PROMOTE_EE', true),
   },
-  // Critical: Configure cookies for Render's proxy setup
-  url: env('STRAPI_ADMIN_BACKEND_URL', 'https://strapi-backend-bchh.onrender.com'),
-  serveAdminPanel: env.bool('SERVE_ADMIN', true),
 });
