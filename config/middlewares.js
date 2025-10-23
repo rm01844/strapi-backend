@@ -25,18 +25,7 @@ export default [
   'strapi::logger',
   'strapi::query',
   'strapi::body',
-  {
-    name: 'strapi::session',
-    config: {
-      rolling: false,
-      renew: false,
-      // This is the critical fix for Render
-      cookie: {
-        secure: false, // Must be false when behind Render's proxy
-        sameSite: 'lax',
-      },
-    },
-  },
+  'strapi::session',
   'strapi::favicon',
   'strapi::public',
 ];
