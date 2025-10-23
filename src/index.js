@@ -1,21 +1,21 @@
-export default {
+module.exports = {
   /**
    * An asynchronous register function that runs before
    * your application is initialized.
    *
-   * Use this to extend or modify Strapi before it starts.
+   * This gives you an opportunity to extend code.
    */
-  async register({ strapi }) {
-    // Example: console.log("Registering custom logic...");
-  },
+  register(/* { strapi } */) {},
 
   /**
    * An asynchronous bootstrap function that runs before
    * your application gets started.
    *
-   * Use this to set up your data model or run startup jobs.
+   * This gives you an opportunity to set up your data model,
+   * run jobs, or perform some special logic.
    */
-  async bootstrap({ strapi }) {
-    // Example: console.log("Strapi is bootstrapped!");
+  bootstrap({ strapi }) {
+    // Trust proxy for secure cookies to work behind Render's load balancer
+    strapi.server.app.proxy = true;
   },
 };
