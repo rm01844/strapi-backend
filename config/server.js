@@ -1,11 +1,10 @@
+// config/server.js
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
-  proxy: env.bool('IS_PROXIED', true),
+  proxy: true,
   app: {
-    keys: env.array('APP_KEYS'),
+    keys: env.array('APP_KEYS', ['defaultKeyA', 'defaultKeyB']),
   },
-  cron: {
-    enabled: false,
-  },
+  cron: { enabled: false },
 });
