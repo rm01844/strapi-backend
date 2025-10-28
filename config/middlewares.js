@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   'strapi::errors',
   {
     name: 'strapi::security',
@@ -7,36 +7,27 @@ export default [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:', 'http:'],
-          'img-src': [
-            "'self'",
-            'data:',
-            'blob:',
-            'dl.airtable.com',
-            'https://market-assets.strapi.io',
-          ],
+          'img-src': ["'self'", 'data:', 'blob:'],
           'media-src': ["'self'", 'data:', 'blob:'],
           upgradeInsecureRequests: null,
         },
       },
     },
   },
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      origin: ['*'], // or ['https://your-frontend-domain']
+      headers: '*',
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    },
+  },
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
   'strapi::body',
-  {
-    name: 'strapi::session',
-    config: {
-      key: 'strapi.sid',
-      rolling: false,
-      renew: false,
-      httpOnly: true,
-      maxAge: 86400000,
-      secure: false,
-      sameSite: 'lax',
-    },
-  },
+  'strapi::session',
   'strapi::favicon',
   'strapi::public',
 ];
